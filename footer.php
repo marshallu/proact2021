@@ -10,22 +10,29 @@
  */
 
 ?>
-
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'proact2021' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'proact2021' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'proact2021' ), 'proact2021', '<a href="http://www.marshall.edu">Christopher McComas</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+	<footer class="w-full bg-blue-primary py-16">
+		<div class="w-full lg:max-w-6xl px-6 lg:px-0 lg:mx-auto">
+			<div class="flex flex-wrap lg:-mx-4 space-y-8 lg:space-y-0">
+				<div class="w-full lg:w-1/2 lg:px-4">
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/proact-logo.png" alt="PROACT logo" />
+				</div>
+				<div class="w-full lg:w-1/4 lg:px-4 lg:mt-0">
+					<?php if ( is_active_sidebar( 'footer-left' ) ) { ?>
+						<div>
+							<?php dynamic_sidebar( 'footer-left' ); ?>
+						</div>
+					<?php } ?>
+				</div>
+				<div class="w-full lg:w-1/4 lg:px-4 lg:mt-0">
+					<?php if ( is_active_sidebar( 'footer-right' ) ) { ?>
+						<div>
+							<?php dynamic_sidebar( 'footer-right' ); ?>
+						</div>
+					<?php } ?>
+				</div>
+			</div>
+		</div>
+	</footer>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

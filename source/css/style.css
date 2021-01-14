@@ -3,3 +3,59 @@
 @import "tailwindcss/components";
 
 @import "tailwindcss/utilities";
+
+x-cloak {
+	@apply hidden;
+}
+
+footer a {
+	@apply text-white underline;
+}
+
+footer a:hover {
+	@apply no-underline;
+}
+
+footer ul {
+	@apply leading-relaxed;
+}
+
+/* For the slideout function */
+.off-canvas {
+    @apply invisible;
+    transition-duration: .3s;
+    -webkit-transform: translate3d(30rem, 0, 0);
+    transform: translate3d(30rem, 0, 0);
+    transition-timing-function: cubic-bezier(.15,.30,.65,1.05);
+}
+.off-canvas.active {
+    @apply visible;
+   -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.nav-site-parent.active {
+	@apply text-blue-primary;
+}
+
+/* Typography */
+.entry-content p {
+	@apply leading-relaxed;
+}
+
+.entry-content p:not(:first-child) {
+	@apply mt-6;
+}
+
+.entry-content p + ul {
+    @apply mt-2 list-disc list-outside ml-4 leading-relaxed;
+}
+
+/* Images */
+.alignleft {
+	@apply float-left;
+}
+
+.alignright {
+	@apply float-right;
+}
